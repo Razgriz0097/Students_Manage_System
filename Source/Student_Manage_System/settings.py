@@ -1,4 +1,5 @@
-#coding:utf-8
+# -*- coding:utf-8 -*-
+
 
 """
 Django settings for Student_Manage_System project.
