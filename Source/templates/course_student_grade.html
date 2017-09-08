@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <title>录入学生成绩</title>
+</head>
+<body style="text-align: center">
+<div class="container-fluid">
+    <h3 style="text-align: center">录入学生【{{ student }}】的《{{ course }}》成绩</h3>
+
+    <hr>
+    <form method="post" class="bs-example bs-example-form" role="form" style="width: 400px; margin-left: auto; margin-right: auto">
+        {% csrf_token %}
+        <div class="input-group">
+            <span class="input-group-addon">学号</span>
+            <input type="number" name="score"  value="{{ score }}" class="form-control">
+        </div>
+        <br>
+
+        <button type="submit" style="width: 300px" class="btn btn-default">提交</button>
+    </form>
+    <button class="btn btn-default" style="width: 300px" onclick="goToUrl('/')">返回</button>
+
+</div>
+
+</body>
+<script src="/static/js/base.js"></script>
+</html>

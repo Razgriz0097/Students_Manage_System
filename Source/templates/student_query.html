@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <title>学生信息查询</title>
+</head>
+<body style="text-align: center">
+<div class="container-fluid" style="text-align: center">
+    <h1>学生信息查询</h1>
+    <hr>
+
+    <div>
+        <form method="post" class="bs-example bs-example-form" role="form" style="width: 400px; margin-left: auto; margin-right: auto">
+            {% csrf_token %}
+            <div class="input-group">
+                <span class="input-group-addon">学号</span>
+                <input type="text" name="number" class="form-control" placeholder="学生学号">
+            </div>
+            <br>
+            <button class="btn btn-info" type="submit">查询</button>
+        </form>
+        <br>
+        <form class="bs-example bs-example-form" role="form" style="width: 400px; margin-left: auto; margin-right: auto">
+            <div class="input-group">
+                <span class="input-group-addon">学号</span>
+                <input type="text" disabled="disabled" value="{{ number }}" class="form-control" placeholder="">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">姓名</span>
+                <input type="text" disabled="disabled" value="{{ name }}" class="form-control" placeholder="">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">手机</span>
+                <input type="text" disabled="disabled" value="{{ mobile }}" class="form-control" placeholder="">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">邮箱</span>
+                <input type="text" disabled="disabled" value="{{ username }}" class="form-control" placeholder="">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">地址</span>
+                <input type="text" disabled="disabled" value="{{ address }}" class="form-control" placeholder="">
+            </div>
+        </form>
+        <br>
+        <button class="btn btn-default" style="width: 300px" onclick="goToUrl('/')">返回</button>
+    </div>
+
+</div>
+
+</body>
+<script src="/static/js/base.js"></script>
+</html>

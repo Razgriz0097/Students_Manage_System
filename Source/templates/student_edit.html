@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <title>修改个人信息</title>
+</head>
+<body style="text-align: center">
+<div class="container-fluid" style="text-align: center">
+    <h1>修改个人信息</h1>
+    <hr>
+
+    <div>
+        <h2>修改个人信息</h2>
+        <br>
+        <form method="post" class="bs-example bs-example-form" role="form" style="width: 400px; margin-left: auto; margin-right: auto">
+            {% csrf_token %}
+            <div class="input-group">
+                <span class="input-group-addon">学号</span>
+                <input type="text" disabled="disabled" value="{{ request.user.number }}" class="form-control" placeholder="">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">姓名</span>
+                <input type="text" name="name" value="{{ request.user.name }}" class="form-control" placeholder="">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">手机</span>
+                <input type="text" name="mobile" value="{{ request.user.mobile }}" class="form-control" placeholder="">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">邮箱</span>
+                <input type="text" disabled="disabled" value="{{ request.user.username }}" class="form-control" placeholder="">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">地址</span>
+                <input type="text" name="address" value="{{ request.user.address }}" class="form-control" placeholder="">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-warning">提交修改</button>
+        </form>
+    </div>
+
+
+</div>
+
+</body>
+<script src="/static/js/base.js"></script>
+</html>

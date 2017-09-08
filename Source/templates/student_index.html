@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <title>学生主页</title>
+</head>
+<body style="text-align: center">
+<div class="container-fluid" style="text-align: center">
+    <h1>学生主页</h1>
+    <hr>
+
+    <div>
+        <h2>个人信息</h2>
+        <br>
+        <form class="bs-example bs-example-form" role="form" style="width: 400px; margin-left: auto; margin-right: auto">
+            <div class="input-group">
+                <span class="input-group-addon">学号</span>
+                <input type="text" disabled="disabled" value="{{ request.user.number }}" class="form-control" placeholder="">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">姓名</span>
+                <input type="text" disabled="disabled" value="{{ request.user.name }}" class="form-control" placeholder="">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">手机</span>
+                <input type="text" disabled="disabled" value="{{ request.user.mobile }}" class="form-control" placeholder="">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">邮箱</span>
+                <input type="text" disabled="disabled" value="{{ request.user.username }}" class="form-control" placeholder="">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">地址</span>
+                <input type="text" disabled="disabled" value="{{ request.user.address }}" class="form-control" placeholder="">
+            </div>
+        </form>
+    </div>
+
+    <hr>
+
+    <button onclick="goToUrl('/user/edit-info')" class="btn btn-warning">修改信息</button>
+    <button onclick="goToUrl('/user/change-pwd')" class="btn btn-warning">修改密码</button>
+    <button onclick="goToUrl('/course/choose')" class="btn btn-info">选课页面</button>
+    <button onclick="goToUrl('/user/logout')" class="btn btn-warning">退出登录</button>
+
+</div>
+
+</body>
+<script src="/static/js/base.js"></script>
+</html>

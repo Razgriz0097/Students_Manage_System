@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <title>学生选课</title>
+</head>
+<body style="text-align: center">
+<div class="container-fluid">
+    <h3 style="text-align: center">已选课程（点击取消）</h3>
+
+    <hr>
+
+    {% for item in choosed %}
+        <button onclick="goToUrl('/course/{{ item.id }}/{{ request.user.id }}/delete',  '确认选择{{ item.name }}课程？\n{{ item.desc }}')" class="btn btn-success">{{ item.name }}（成绩：{{ item.score }}）</button>
+    {% endfor %}
+    <hr>
+
+    <h3 style="text-align: center">未选的课程（点击选取）</h3>
+    <hr>
+
+    {% for item in unchoosed %}
+        <button onclick="goToUrl('/course/{{ item.id }}/{{ request.user.id }}/add', '确认选择{{ item.name }}课程？\n{{ item.desc }}')" class="btn btn-info">{{ item.name }}</button>
+    {% endfor %}
+    <br><br><br>
+    <button class="btn btn-default" style="width: 300px" onclick="goToUrl('/')">返回</button>
+
+
+</div>
+
+</body>
+<script src="/static/js/base.js"></script>
+</html>

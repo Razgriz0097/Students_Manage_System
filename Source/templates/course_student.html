@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <title>已选课的学生</title>
+</head>
+<body style="text-align: center">
+<div class="container-fluid">
+    <h3 style="text-align: center">已选“{{ course.name }}”课的学生</h3>
+
+    <hr>
+
+<table class="table table-bordered">
+  <caption>学生列表</caption>
+  <thead>
+    <tr>
+      <th>姓名</th>
+      <th>学号</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for item in students %}
+    <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.number }}</td>
+        <td><button onclick="goToUrl('/course/{{ course.id }}/{{ item.id }}/change-grade')" class="btn btn-default">去打分</button></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+
+</div>
+
+</body>
+<script src="/static/js/base.js"></script>
+</html>
